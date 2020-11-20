@@ -1,0 +1,33 @@
+#videoconference_page.tile-view .displayNameContainer {
+  visibility: visible;
+  height: 100%;
+}
+
+#videoconference_page.tile-view .displayNameContainer .displayName,
+#videoconference_page.vertical-filmstrip span:not(#localVideoContainer) .displayNameContainer .displayName {
+  position: relative;
+  top: 5px;
+  left: 0;
+  transform: none;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: fit-content;
+  max-width: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-overflow: ellipsis;
+}
+
+#videoconference_page.vertical-filmstrip span:not(#localVideoContainer) .displayNameContainer .displayName {
+  max-width: 100%;
+  padding: 0 3px;
+}
+
+#videoconference_page.vertical-filmstrip span:not(#localVideoContainer) .displayNameContainer {
+  visibility: visible;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
