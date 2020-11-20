@@ -20,6 +20,10 @@
     <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
     <p><a href="javascript:(function()%7Bif%20(window.APP%20%26%26%20APP.store)%20%7Blet%20state%20%3D%20APP.store.getState()%3Blet%20avatarUrl%20%3D%20'https%3A%2F%2Fjitsi-hacks.cketti.eu%2Ftwemoji_smiling_face_with_sunglasses.png'%3Bif%20('features%2Fbase%2Fsettings'%20in%20state%20%26%26%20'avatarURL'%20in%20state%5B'features%2Fbase%2Fsettings'%5D)%20%7Blet%20oldAvatarUrl%20%3D%20state%5B'features%2Fbase%2Fsettings'%5D.avatarURL%3Bif%20(oldAvatarUrl.length%20%3E%200)%20%7BavatarUrl%20%3D%20oldAvatarUrl%3B%7D%7Dlet%20newAvatarUrl%20%3D%20prompt(%22Avatar%20URL%22%2C%20avatarUrl)%3Bif%20(newAvatarUrl%20!%3D%20null)%20APP.conference.changeLocalAvatarUrl(newAvatarUrl)%3B%7D%20else%20%7Bconsole.log('%5BJitsi%20Hacks%5D%20Not%20a%20Jitsi%20page')%3B%7D%7D)()">Avatar URL [Jitsi Hacks]</a></p>
 
+    <h3>Emoji Reaction Via Avatar</h3>
+    <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
+    <p><a href="javascript:(function()%7Bfunction%20callback()%7B%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fjitsi-hacks.cketti.eu%2Femoji-reaction.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()">Emoji Reaction [Jitsi Hacks]</a></p>
+
   </div>
 </body>
 </html>
