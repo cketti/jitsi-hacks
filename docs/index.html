@@ -16,6 +16,10 @@
     <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
     <p><a href="javascript:(function()%7Blet%20link%20%3D%20document.createElement('link')%3Blink.rel%20%3D%20'stylesheet'%3Blink.type%20%3D%20'text%2Fcss'%3Blink.href%20%3D%20'https%3A%2F%2Fjitsi-hacks.cketti.eu%2Falways-show-display-names.css'%3Bdocument.head.appendChild(link)%7D)()">Always show names [Jitsi Hacks]</a></p>
 
+    <h3>Set Persisting Avatar URL</h3>
+    <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
+    <p><a href="javascript:(function()%7Bif%20(window.APP%20%26%26%20APP.store)%20%7Blet%20state%20%3D%20APP.store.getState()%3Blet%20avatarUrl%20%3D%20'https%3A%2F%2Fjitsi-hacks.cketti.eu%2Ftwemoji_smiling_face_with_sunglasses.png'%3Bif%20('features%2Fbase%2Fsettings'%20in%20state%20%26%26%20'avatarURL'%20in%20state%5B'features%2Fbase%2Fsettings'%5D)%20%7Blet%20oldAvatarUrl%20%3D%20state%5B'features%2Fbase%2Fsettings'%5D.avatarURL%3Bif%20(oldAvatarUrl.length%20%3E%200)%20%7BavatarUrl%20%3D%20oldAvatarUrl%3B%7D%7Dlet%20newAvatarUrl%20%3D%20prompt(%22Avatar%20URL%22%2C%20avatarUrl)%3Bif%20(newAvatarUrl%20!%3D%20null)%20APP.conference.changeLocalAvatarUrl(newAvatarUrl)%3B%7D%20else%20%7Bconsole.log('%5BJitsi%20Hacks%5D%20Not%20a%20Jitsi%20page')%3B%7D%7D)()">Avatar URL [Jitsi Hacks]</a></p>
+
   </div>
 </body>
 </html>
