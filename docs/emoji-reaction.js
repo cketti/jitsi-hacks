@@ -6,35 +6,35 @@ if (!window.JitsiMeetJS) {
   const emojis = [
     {
       cssName: 'thumbs-up',
-      url: 'https://jitsi-hacks.cketti.eu/thumbs_up.svg'
+      url: 'https://jitsi-hacks.cketti.eu/thumbs_up.png'
     },
     {
       cssName: 'thumbs-down',
-      url: 'https://jitsi-hacks.cketti.eu/thumbs_down.svg'
+      url: 'https://jitsi-hacks.cketti.eu/thumbs_down.png'
     },
     {
       cssName: 'zipper-mouth-face',
-      url: 'https://jitsi-hacks.cketti.eu/zipper_mouth_face.svg'
+      url: 'https://jitsi-hacks.cketti.eu/zipper_mouth_face.png'
     },
     {
       cssName: 'raising-hands',
-      url: 'https://jitsi-hacks.cketti.eu/raising_hands.svg'
+      url: 'https://jitsi-hacks.cketti.eu/raising_hands.png'
     },
     {
       cssName: 'hourglass',
-      url: 'https://jitsi-hacks.cketti.eu/hourglass.svg'
+      url: 'https://jitsi-hacks.cketti.eu/hourglass.png'
     },
     {
       cssName: 'framed-picture',
-      url: 'https://jitsi-hacks.cketti.eu/framed_picture.svg'
+      url: 'https://jitsi-hacks.cketti.eu/framed_picture.png'
     },
     {
       cssName: 'clapping-hands',
-      url: 'https://jitsi-hacks.cketti.eu/clapping_hands.svg'
+      url: 'https://jitsi-hacks.cketti.eu/clapping_hands.png'
     },
     {
       cssName: 'waving-hand',
-      url: 'https://jitsi-hacks.cketti.eu/waving_hand.svg'
+      url: 'https://jitsi-hacks.cketti.eu/waving_hand.png'
     }
   ];
 
