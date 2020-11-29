@@ -30,7 +30,7 @@
 
     <h3>Change room subject</h3>
     <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
-    <p><a href="javascript:(function()%7Blet%20subject%20%3D%20prompt(%22Change%20subject%22%2C%20APP.store.getState()%5B'features%2Fbase%2Fconference'%5D.subject)%3Bif%20(subject%20!%3D%20null)%20%7BAPP.store.getState()%5B'features%2Fbase%2Fconference'%5D.conference.setSubject(subject)%3B%7D%7D)()">Change room subject [Jitsi Hacks]</a></p>
+    <p><a href="javascript:(function()%7Blet%20subject%20%3D%20prompt(%22Change%20subject%22%2C%20APP.store.getState()%5B'features%2Fbase%2Fconference'%5D.subject)%3Bif%20(subject%20!%3D%20null)%20%7BAPP.store.getState()%5B'features%2Fbase%2Fconference'%5D.conference.room.setSubject(subject)%3B%7D%7D)()">Change room subject [Jitsi Hacks]</a></p>
 
     <h3>Reorder video tiles</h3>
     <p>Drag the following link into your bookmark bar and click it while your Jitsi tab is focused</p>
