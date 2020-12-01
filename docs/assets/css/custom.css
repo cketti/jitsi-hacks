@@ -1,0 +1,15 @@
+a.bookmarklet {
+    background-color: #188eac;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.image-credits {
+    margin-top: -1em;
+    font-size: 0.7em;
+}

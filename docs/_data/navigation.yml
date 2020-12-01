@@ -1,0 +1,18 @@
+- name: Hacks
+  dropdown:
+    - name: Reorder video tiles
+      link: /hacks/reorder/
+    - name: Always show names
+      link: /hacks/always_show_names/
+    - name: Lower third
+      link: /hacks/lower_third/
+    - name: Emoji reaction
+      link: /hacks/emoji_reaction/
+    - name: Change avatar
+      link: /hacks/change_avatar/
+    - name: VIP
+      link: /hacks/vip/
+    - name: Change room subject
+      link: /hacks/change_subject/
+- name: Source code
+  link: https://github.com/cketti/jitsi-hacks

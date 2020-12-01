@@ -1,0 +1,17 @@
+remote_theme: chrisrhymes/bulma-clean-theme@v0.10.3
+title: Jitsi Hacks
+tagline: Extending Jitsi Meet using injected scripts
+author: cketti
+twitter:
+  username: cketti
+social:
+  name: cketti
+  links:
+    - https://fosstodon.org/@cketti
+    - https://twitter.com/cketti
+    - https://github.com/cketti
+url: "https://jitsi-hacks.cketti.eu"
+logo: "/favicon.png"
+permalink: pretty
+hide_share_buttons: true
+gh_sponsor: cketti
