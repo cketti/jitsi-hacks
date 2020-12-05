@@ -3,38 +3,41 @@ if (!window.JitsiMeetJS) {
 } else if (document.getElementById('jitsi-hacks-emoji-reaction')) {
   console.log("[Jitsi Hacks] The script has already been loaded");
 } else (function() {
+  // Base URL for emoji images; make sure it ends with a slash
+  const emojiBaseUrl = 'https://jitsi-hacks.cketti.eu/';
+
   const emojis = [
     {
       cssName: 'thumbs-up',
-      url: 'https://jitsi-hacks.cketti.eu/thumbs_up.png'
+      url: emojiBaseUrl + 'thumbs_up.png'
     },
     {
       cssName: 'thumbs-down',
-      url: 'https://jitsi-hacks.cketti.eu/thumbs_down.png'
+      url: emojiBaseUrl + 'thumbs_down.png'
     },
     {
       cssName: 'zipper-mouth-face',
-      url: 'https://jitsi-hacks.cketti.eu/zipper_mouth_face.png'
+      url: emojiBaseUrl + 'zipper_mouth_face.png'
     },
     {
       cssName: 'raising-hands',
-      url: 'https://jitsi-hacks.cketti.eu/raising_hands.png'
+      url: emojiBaseUrl + 'raising_hands.png'
     },
     {
       cssName: 'hourglass',
-      url: 'https://jitsi-hacks.cketti.eu/hourglass.png'
+      url: emojiBaseUrl + 'hourglass.png'
     },
     {
       cssName: 'framed-picture',
-      url: 'https://jitsi-hacks.cketti.eu/framed_picture.png'
+      url: emojiBaseUrl + 'framed_picture.png'
     },
     {
       cssName: 'clapping-hands',
-      url: 'https://jitsi-hacks.cketti.eu/clapping_hands.png'
+      url: emojiBaseUrl + 'clapping_hands.png'
     },
     {
       cssName: 'waving-hand',
-      url: 'https://jitsi-hacks.cketti.eu/waving_hand.png'
+      url: emojiBaseUrl + 'waving_hand.png'
     }
   ];
 

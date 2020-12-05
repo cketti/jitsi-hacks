@@ -5,7 +5,7 @@ hero_height: is-normal
 image: "/hacks/emoji_reaction/screenshot.png"
 ---
 
-When your video is disabled react by temporarily changing your avatar to an emoji.
+React by temporarily changing your avatar to an emoji.
 
 [<img src="screenshot.png" width="640" height="360" alt="Screenshot of emoji reaction hack in action">](screenshot.png)
 
@@ -30,6 +30,12 @@ Press that button to activate the functionality.
 
 In the dialog that appears select one of the emojis. Your avatar will be changed to the selected emoji image for 30
 seconds and then switch back to the previous avatar.
+
+
+## Limitations
+
+Avatars are usually not displayed to participants when your camera is enabled. In that case nobody will see your emoji
+reaction 😞
 
 
 ## How does it work?
