@@ -8,6 +8,7 @@ twitter:
 layout: page
 callouts: featured_hacks
 hero_height: is-normal
+show_sidebar: true
 ---
 
 

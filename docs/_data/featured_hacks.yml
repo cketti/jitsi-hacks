@@ -4,15 +4,15 @@ items:
   - title: Reorder video tiles
     description: Reorder video tiles via drag and drop
     image: /hacks/reorder/screenshot.png
-    call_to_action_name: more…
+    call_to_action_name: Read more
     call_to_action_link: /hacks/reorder/
   - title: Emoji reaction
     description: "React by changing your avatar to an emoji"
     image: /hacks/emoji_reaction/screenshot.png
-    call_to_action_name: more…
+    call_to_action_name: Read more
     call_to_action_link: /hacks/emoji_reaction/
   - title: Lower Third
     description: "Include a text overlay in your video stream."
     image: /hacks/lower_third/screenshot.jpg
-    call_to_action_name: more…
+    call_to_action_name: Read more
     call_to_action_link: /hacks/lower_third/

@@ -2,6 +2,8 @@
   dropdown:
     - name: Reorder video tiles
       link: /hacks/reorder/
+    - name: Toggle own video
+      link: /hacks/toggle_local/
     - name: Always show names
       link: /hacks/always_show_names/
     - name: Lower third
