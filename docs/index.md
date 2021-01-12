@@ -37,4 +37,4 @@ all of my work is available under an open source license. You can find everythin
 *Jitsi Hacker* 😎
 
 PS: I'm currently trying to live the *full-time open source developer* life. If you like my work and want to say 'thank
-you' please consider [becoming one of my sponsors](https://github.com/sponsors/cketti).
+you' please consider [becoming one of my sponsors](https://cketti.de/sponsor).
