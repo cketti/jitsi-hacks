@@ -231,32 +231,164 @@ if (!window.JitsiMeetJS) {
     }
   }
 
-  function showLowerThirdDialog() {
-    APP.UI.messageHandler.openDialog(
-      "Lower third",
-      `
-      <div style="margin-bottom: 0.5em">
-        <label for="lower-third-text">Text to display in lower third:</label>
-      </div>
-      <input class="input-control" type=text name="lower-third-text" id="lower-third-text" autofocus>
-      `,
-      false,
-      {
-        'Enable': true,
-        'Cancel': false
-      },
-      (e, submitValue) => {
-        if (submitValue) {
-          let text = $('#lower-third-text').val();
-          saveLowerThirdText(text);
-
-          enableLowerThird();
+  function addLowerThirdStyles() {
+    $('head').append(`
+      <style>
+        .modal {
+          display: none;
         }
-      },
-      () => {
-        $('#lower-third-text').val(lowerThirdEffect.text);
-      }
-    );
+        .modal.is-open {
+          z-index: 1000;
+          display: block;
+        }
+        .modal__footer {
+          display: flex; 
+          justify-content: flex-end;
+        }
+        .modal__overlay {
+          z-index: 1000;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0,0,0,0.6);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .modal__container {
+          min-width: 30em;
+          background-color: rgb(40, 52, 71);
+          padding: 30px;
+          max-width: 500px;
+          max-height: 100vh;
+          overflow-y: auto;
+          box-sizing: border-box;
+          border-radius: 3px;
+          box-shadow: rgb(9 30 66 / 8%) 0px 0px 0px 1px, rgb(9 30 66 / 8%) 0px 2px 1px, rgb(9 30 66 / 31%) 0px 0px
+        }
+        .modal__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .modal__title {
+          margin-top: 0;
+          margin-bottom: 0;
+          box-sizing: border-box;
+          font-size: 20px;
+          font-style: inherit;
+          font-weight: 500;
+          letter-spacing: -0.008em;
+          line-height: 1;
+          color: rgb(184, 199, 224);
+        }
+        .modal__close {
+          background: transparent;
+          border: 0;
+          fill: #b8c7e0;
+        }
+        .modal__content {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          line-height: 1.5;
+          color: rgb(184, 199, 224);
+        }
+        .modal__btn {
+          -webkit-box-align: baseline;
+          align-items: baseline;
+          border-width: 0px;
+          border-radius: 3px;
+          box-sizing: border-box;
+          display: inline-flex;
+          font-size: inherit;
+          font-style: normal;
+          font-family: inherit;
+          font-weight: 500;
+          max-width: 100%;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+          white-space: nowrap;
+          background: none;
+          cursor: pointer;
+          height: 2.28571em;
+          line-height: 2.28571em;
+          padding: 0px 10px;
+          vertical-align: middle;
+          width: auto;
+          -webkit-box-pack: center;
+          justify-content: center;
+          color: rgb(159, 176, 204) !important;
+        }
+        .modal__btn:focus, .modal__btn:hover {
+          background: rgb(49, 61, 82);
+          text-decoration: inherit;
+          transition-duration: 0s, 0.15s;
+          color: rgb(159, 176, 204) !important;
+        }
+        .modal__btn:active {
+          background: rgb(179, 212, 255);
+          transition-duration: 0s, 0s;
+          color: rgb(0, 82, 204) !important;
+        }
+        .modal__btn_primary {
+          margin-right: 5px;
+          -webkit-box-align: baseline;
+          align-items: baseline;
+          border-width: 0px;
+          border-radius: 3px;
+          box-sizing: border-box;
+          display: inline-flex;
+          font-size: inherit;
+          font-style: normal;
+          font-family: inherit;
+          font-weight: 500;
+          max-width: 100%;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+          white-space: nowrap;
+          background: rgb(76, 154, 255);
+          cursor: pointer;
+          height: 2.28571em;
+          line-height: 2.28571em;
+          padding: 0px 10px;
+          vertical-align: middle;
+          width: auto;
+          -webkit-box-pack: center;
+          justify-content: center;
+          color: rgb(27, 38, 56) !important;
+        }
+        .modal__btn_primary:focus, .modal__btn_primary:hover {
+          background: rgb(179, 212, 255);
+          text-decoration: inherit;
+          transition-duration: 0s, 0.15s;
+          color: rgb(27, 38, 56) !important;
+        }
+        .modal__btn_primary:active {
+          background: rgb(38, 132, 255);
+          transition-duration: 0s, 0s;
+          color: rgb(27, 38, 56) !important;
+        }
+      </style>
+    `);
+  }
+
+  function showLowerThirdDialog() {
+    $('#lower-third-text').val(lowerThirdEffect.text);
+    
+    MicroModal.show('modal-lower-third');
+  }
+
+  function onLowerThirdEnabled() {
+    let text = $('#lower-third-text').val();
+    saveLowerThirdText(text);
+
+    enableLowerThird();
   }
 
   function onToggleButtonClick() {
@@ -281,9 +413,47 @@ if (!window.JitsiMeetJS) {
 
     toggleButton.click(onToggleButtonClick);
 
-    $('div.button-group-right').prepend(toggleButton);
+    $('div.toolbox-button-wth-dialog').before(toggleButton);
+  }
+  
+  function addLowerThirdDialog() {
+    $(document.body).append(`
+      <div class="modal micromodal-slide" id="modal-lower-third" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-lower-third-title">
+            <header class="modal__header">
+              <h2 class="modal__title" id="modal-lower-third-title">Lower Third</h2>
+              <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                <svg height="22" width="22" viewBox="0 0 24 24" data-micromodal-close><path d="M18.984 6.422L13.406 12l5.578 5.578-1.406 1.406L12 13.406l-5.578 5.578-1.406-1.406L10.594 12 5.016 6.422l1.406-1.406L12 10.594l5.578-5.578z"></path></svg>
+              </button>
+            </header>
+            <main class="modal__content" id="modal-lower-third-content">
+              <div style="margin-bottom: 0.5em">
+                <label for="lower-third-text">Text to display in lower third:</label>
+              </div>
+              <input class="input-control" type=text name="lower-third-text" id="lower-third-text" autofocus>
+            </main>
+            <footer class="modal__footer">
+              <button id="lower-third-enable-button" class="modal__btn modal__btn_primary" data-micromodal-close aria-label="Enable lower third">Enable</button>
+              <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    `);
+    
+    $('#lower-third-enable-button').click(onLowerThirdEnabled);
+  }
+  
+  function addMicroModalScript() {
+      let script = document.createElement('script');
+      script.src = 'https://jitsi-hacks.cketti.eu/micromodal.min.js';
+      document.body.appendChild(script);
   }
 
+  addMicroModalScript();
+  addLowerThirdStyles();
+  addLowerThirdDialog();
   addLowerThirdToggleButton();
 
   APP.keyboardshortcut.registerShortcut('L', null, () => {
